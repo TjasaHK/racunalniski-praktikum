@@ -49,8 +49,17 @@ section#uvod {
     text-align: left;
     float: right;
     margin-left: 2em;
+    
 }
 .slika img {
     width: 100%;
     height: auto;
+    border-radius: 50%;
+}
+.slika p:last-child {
+    font-size: o.8em;
+    margin-top: 0,2em;
+}
+a::before { 
+    content: "🔗 "
 }
