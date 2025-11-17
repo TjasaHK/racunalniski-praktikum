@@ -29,6 +29,18 @@
 % To naredite tako, da za ukazom `\title` dodate ukaz `\date{}`.
 \newcommand{\m}{\mathcal{M}}
 \newcommand{\pojem}[1]{\pojem{\color{purple}#1}}
+\newproof{dokaz}{Dokaz izreka}
+\newenwvironment{magic}[3]
+{\begin{table}
+   \caption{#2}
+   \label{#3}
+   \centering
+    \begin{tabular}{*{#1}{c|}}}
+
+   {\end{tabular}
+\end{table}}
+
+
 \begin{document}
 
 \maketitle \begin{center}
@@ -80,7 +92,7 @@ Primer magičnega kvadrata reda 3 je prikazan v tabeli ?!?.
 % Začetek magičnega kvadrata
 %  
 
-\begin{table}
+\begin{magic}
    \caption{Magični kvadrat reda 3}
    \label{table:mag3}
    \large
@@ -95,7 +107,7 @@ Primer magičnega kvadrata reda 3 je prikazan v tabeli ?!?.
        4 & 9 & 2 \\
        \hline
    \end{tabular}
-\end{table}
+\end{magic}
 % Konec magičnega kvadrata
 
 \begin{definicija}
@@ -239,7 +251,7 @@ in zato kvadrat ni normalen.
 % Začetek okolja izrek
  
  \begin{izrek}
-     Magična konstanta normalnega magičnega kvadrata reda !!
+     Magična konstanta normalnega magičnega kvadrata reda \(1+2+3+...+n^2=\sum_{k=1}^{n} k=\frac{1}{2}2n^2(n^2+1)\)
      je enaka
      \begin{equation}
       \label{eq:mc}
@@ -251,19 +263,19 @@ in zato kvadrat ni normalen.
 
 % Začetek dokaza
    
-   \begin{proof}
+   \begin{dokaz}
       V normalnem magičnem kvadratu reda $n$ je vsota vseh nastopajočih
       števil (glej \eqref{eq:numbers} na strani \pageref{eq:numbers}) enaka
       $1+2+3+\dots+n^2=\sum_{k=1}^{n^2}k=\frac{1}{2}n^2(n^2+1)$. Ker imamo
       v kvadratu $n$ vrstic z enako vsoto, je vsota števil v eni vrstici
       enaka številu $\m(n)$.
-   \end{proof} % sklica: eq:numbers, eq:numbers
+   \end{dokaz} % sklica: eq:numbers, eq:numbers
 % Konec dokaza
 
 Preprost račun pokaže, da je konstanti \eqref{eq:mc} analogna konstanta
 $\m(n;A,D)$ za magični kvadrat, v katerem so nameščena števila
 $A$, $A+D$, $A+2D$, \dots, $A+(n^2-1)D$, enaka % sklic: eq:mc
-!!
+\[M_2(n; A, D)= \frac{1}{2}n(2A+D(n^2-1))\]
 Kvadratu v tabeli ?!? ustrezata konstanti $A=20$ in $D=1$.
 
 \begin{definicija}
@@ -308,7 +320,7 @@ iz kvadrata Lo Shu z zrcaljenjem preko sredinske vodoravne črte.
         \hline
         red & 1 & 2 & 3 & 4 & 5 & 6 \\
         \hline
-        število kvadratov & 1 & 0 & 1 & 880 & 275305224 & !!\\
+        število kvadratov & 1 & 0 & 1 & 880 & 275305224 & \((1,7745\pm0,0010)10^{19}\)\\
         \hline
         \bottomrule
       \end{tabular}
@@ -333,11 +345,17 @@ magični kvadrati redov 5, 6 in 9.
 
 % - napis nad tabelo: Magični kvadrat reda 5
 % - oznaka: table:mag5
-%   17 & 24 &  1 &  8 & 15 \\\hline
-%   23 &  5 &  7 & 14 & 16 \\\hline
-%    4 &  6 & 13 & 20 & 22 \\\hline
-%   10 & 12 & 19 & 21 &  3 \\\hline
-%   11 & 18 & 25 &  2 &  9 \\\hline
+%   
+\begin{table}
+  
+  \begin{tabular}{*{3}{c|}}
+    17 & 24 &  1 &  8 & 15 \\\hline
+     23 &  5 &  7 & 14 & 16 \\\hline
+     4 &  6 & 13 & 20 & 22 \\\hline
+     10 & 12 & 19 & 21 &  3 \\\hline
+    11 & 18 & 25 &  2 &  9 \\\hline
+  \end{tabular}
+\end{table}
 
 % - napis nad tabelo: Magični kvadrat reda 6
 % - oznaka: table:mag6
